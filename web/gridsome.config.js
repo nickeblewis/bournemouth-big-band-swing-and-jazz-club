@@ -12,13 +12,23 @@ const clientConfig = require('./client-config')
 
 const isProd = process.env.NODE_ENV === 'production'
 
+const tailwind = require('tailwindcss')
+const purgecss = require('@fullhuman/postcss-purgecss')
+
+const postcssPlugins = [
+  tailwind(),
+]
+
+if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
+
 module.exports = {
   siteName: 'Gridsome Blog Starter',
   siteDescription:
     'A simple, hackable & minimalistic starter for Gridsome that uses structured content from Sanity.io.',
 
   templates: {
-    SanityPost: '/:slug__current'
+    SanityNewsletter: '/blog/:year/:month/:slug__current'
+    //Post: '/:slug__current'
   },
 
   plugins: [
@@ -31,13 +41,13 @@ module.exports = {
         overlayDrafts: !isProd,
         watchMode: !isProd
       }
-    }
-    /* {
+    },
+    {
       // Create posts from markdown files
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Post',
-        path: 'content/posts/*.md',
+        path: 'blog/**/*.md',
         route: '/:slug',
         refs: {
           // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
@@ -48,9 +58,13 @@ module.exports = {
           }
         }
       },
-      {
-
-      }
-    } */
-  ]
+    }
+  ],
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: postcssPlugins,
+      },
+    },
+  }
 }

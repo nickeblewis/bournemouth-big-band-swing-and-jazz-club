@@ -11,4 +11,6 @@ module.exports = function(api) {
     // Use the Data store API here: https://gridsome.org/docs/data-store-api
     store.addMetadata('sanityOptions', clientConfig.sanity)
   })
+
+  
 }
