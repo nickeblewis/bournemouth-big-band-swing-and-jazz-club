@@ -39,22 +39,13 @@
         </div>
 
         <ul class="text-lg sm:text-xl">
-          <li class="checkmark mb-6">
-            <div>WEDNESDAY THE 11th DECEMBER 7.15pm</div>
-            <div class="text-lg text-gray-600">“You're On!” Each member presents a single track from a favourite Jazz CD. Including FREE Mince Pies!</div>
+          <li class="checkmark mb-6" v-for="event in $page.events.edges" :key="event.id">
+            <div>{{ event.node.title }}</div>
+            <div class="text-lg text-gray-600">
+              <block-content :blocks="event.node._rawExcerpt" /> 
+            </div>
           </li>
-          <li class="checkmark mb-6">
-            <div>WEDNESDAY THE 11TH SEPTEMBER</div>
-            <div class="text-lg text-gray-600">Recorded music presentation 3 members present 40 minutes of recorded jazz music</div>
-          </li>
-          <li class="checkmark mb-6">
-            <div>WEDNESDAY THE 14th AUGUST 7.15pm</div>
-            <div class="text-lg text-gray-600">Guest Speaker - The life and times of DUKE ELLINGTON plus HOAGY CARMICHAEL a life in music</div>
-          </li>
-          <li class="checkmark mb-6">
-            <div>WEDNESDAY THE 10th JULY 7.15pm</div>
-            <div class="text-lg text-gray-600">“You're On!” Each member presents a single track from a favourite Jazz CD. </div>
-          </li>
+
         </ul>
       </div> <!-- end projects -->
     </div>
@@ -68,53 +59,9 @@
         </div>
 
         <ul class="text-lg sm:text-xl">
-          <li class="checkmark mb-6">
-            <div>November 2019</div>
-            <div class="text-lg text-gray-600"><a href="/downloads/newsletter-november-2019.pdf">Download the November 2019 Newsletter (PDF)</a></div>
-          </li>
-          <li class="checkmark mb-6">
-            <div>October 2019</div>
-            <div class="text-lg text-gray-600"><a href="/downloads/newsletter-october-2019.pdf">Download the October 2019 Newsletter (PDF)</a></div>
-          </li>
-          <li class="checkmark mb-6">
-            <div>September 2019</div>
-            <div class="text-lg text-gray-600"><a href="/downloads/newsletter-september-2019.pdf">Download the September 2019 Newsletter (PDF)</a></div>
-          </li>
-          <li class="checkmark mb-6">
-            <div>August 2019</div>
-            <div class="text-lg text-gray-600"><a href="/downloads/newsletter-august-2019.pdf">Download the August 2019 Newsletter (PDF)</a></div>
-          </li>
-          <li class="checkmark mb-6">
-            <div>July 2019</div>
-            <div class="text-lg text-gray-600"><a href="/downloads/newsletter-july-2019.pdf">Download the July 2019 Newsletter (PDF)</a></div>
-          </li>
-          <li class="checkmark mb-6">
-            <div>June 2019</div>
-            <div class="text-lg text-gray-600"><a href="/downloads/newsletter-june-2019.pdf">Download the June 2019 Newsletter (PDF)</a></div>
-          </li>
-          <li class="checkmark mb-6">
-            <div>May 2019</div>
-            <div class="text-lg text-gray-600"><a href="/downloads/newsletter-may-2019.pdf">Download the May 2019 Newsletter (PDF)</a></div>
-          </li>
-          <li class="checkmark mb-6">
-            <div>April 2019</div>
-            <div class="text-lg text-gray-600"><a href="/downloads/newsletter-april-2019.pdf">Download the April 2019 Newsletter (PDF)</a></div>
-          </li>
-          <li class="checkmark mb-6">
-            <div>March 2019</div>
-            <div class="text-lg text-gray-600"><a href="/downloads/newsletter-march-2019.pdf">Download the March 2019 Newsletter (PDF)</a></div>
-          </li>
-          <li class="checkmark mb-6">
-            <div>February 2019</div>
-            <div class="text-lg text-gray-600"><a href="/downloads/newsletter-february-2019.pdf">Download the February 2019 Newsletter (PDF)</a></div>
-          </li>
-          <li class="checkmark mb-6">
-            <div>January 2019</div>
-            <div class="text-lg text-gray-600"><a href="/downloads/newsletter-january-2019.pdf">Download the January 2019 Newsletter (PDF)</a></div>
-          </li>         
-          <li class="checkmark mb-6">
-            <div>All other newsletters and more</div>
-            <div class="text-lg text-gray-600"><a href="/blog">Visit our Blog section!</a></div>
+          <li class="checkmark mb-6" v-for="post in $page.posts.edges" :key="post.id">
+            <div>{{ post.node.title}}</div>
+            <div class="text-lg text-gray-600"><a :href="post.node.newsletter.asset.url">Download the {{ post.node.title}} Newsletter (PDF)</a></div>
           </li>
         </ul>
       </div> <!-- end projects -->
@@ -208,8 +155,41 @@
   </Layout>
 </template>
 
+<page-query>
+query Posts {
+  events: allSanityEvent (sortBy: "publishedAt", order: DESC) {
+    edges {
+      node {
+        id
+        title
+        publishedAt (format: "MMMM D, Y")
+        _rawExcerpt
+      }
+    }
+  }
+  posts: allSanityNewsletter (sortBy: "publishedAt", order: DESC, limit: 12) {
+    edges {
+      node {
+        id
+        title
+        publishedAt (format: "MMMM D, Y")
+        newsletter {
+          asset {
+            url
+          }
+        }
+      }
+    }
+  }
+}
+</page-query>
+
 <script>
+import BlockContent from '~/components/BlockContent'
 export default {
+  components: {
+    BlockContent
+  },
   data() {
     return {
       formData: {},

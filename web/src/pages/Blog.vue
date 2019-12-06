@@ -4,9 +4,7 @@
       <div v-for="post in $page.posts.edges" :key="post.id" class="post border-gray-400 border-b mb-12">
         <h2 class="text-3xl font-bold"><g-link :to="post.node.path" class="text-copy-primary">{{ post.node.title }}</g-link></h2>
         <div class="text-copy-secondary mb-4">
-          <span>{{ post.node.date }}</span>
-          <span> &middot; </span>
-          <span>{{ post.node.timeToRead }} min read</span>
+          <span>{{ post.node.publishedAt }}</span>
         </div>
 
         <div class="text-lg mb-4">
@@ -30,7 +28,7 @@
 
 <page-query>
 query Posts ($page: Int) {
-  posts: allSanityNewsletter (sortBy: "date", order: DESC, perPage: 3, page: $page) @paginate {
+  posts: allSanityNewsletter (sortBy: "publishedAt", order: DESC, perPage: 12, page: $page) @paginate {
     totalCount
     pageInfo {
       totalPages
