@@ -27,11 +27,7 @@ module.exports = {
     'A simple, hackable & minimalistic starter for Gridsome that uses structured content from Sanity.io.',
 
   templates: {
-    SanityNewsletter: [
-      { path: '/blog/:year/:month/:slug__current'},
-      { name: 'Features', path: '/:slug__current'}
-    ],
-    //Post: '/:slug__current'
+    SanityNewsletter: '/:slug__current'
   },
 
   plugins: [
