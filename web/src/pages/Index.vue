@@ -66,6 +66,23 @@
         </ul>
       </div> <!-- end projects -->
     </div>
+    
+    <div class="overflow-x-hidden">
+      <div class="projects container-inner mx-auto text-xl border-t border-gray-500 border-b py-16 mb-16 relative">
+        <h2 class="font-bold mb-6" id="events">NEW Reviews!</h2>
+
+        <div class="absolute right-0" style="top: 50px; transform: translate(100%) rotate(180deg)">
+          <svg width="170px" height="170px"><use xlink:href="#dots-triangle" /></svg>
+        </div>
+
+        <ul class="text-lg sm:text-xl">
+          <li class="checkmark mb-6" v-for="review in $page.reviews.edges" :key="review.id">
+            <div>{{ review.node.title}}</div>
+            <div class="text-lg text-gray-600"><a :href="review.node.newsletter.asset.url">Download {{ review.node.title}}  (PDF)</a></div>
+          </li>
+        </ul>
+      </div> <!-- end projects -->
+    </div>
 
     <!--<div class="overflow-x-hidden border-gray-200 border-b">
       <div class="get-to-know-me container-inner mx-auto text-xl pb-16 relative">
@@ -173,6 +190,19 @@ query Posts {
         id
         title
         publishedAt (format: "MMMM D, Y")
+        newsletter {
+          asset {
+            url
+          }
+        }
+      }
+    }
+  }
+  reviews: allSanityReview {
+    edges {
+      node {
+        id
+        title
         newsletter {
           asset {
             url

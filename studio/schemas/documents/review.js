@@ -28,6 +28,11 @@ export default {
       description: 'This can be used to schedule post for publishing'
     },
     {
+      title: 'Newsletter PDF',
+      name: 'newsletter',
+      type: 'file',
+    },
+    {
       name: 'mainImage',
       type: 'mainImage',
       title: 'Main image'
