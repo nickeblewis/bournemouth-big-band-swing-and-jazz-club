@@ -31,7 +31,7 @@
     </div>
 
     <div class="overflow-x-hidden">
-      <div class="projects container-inner mx-auto text-xl border-t border-gray-500 border-b py-16 mb-16 relative">
+      <div class="projects container-inner mx-auto text-xl border-orange-500 border-b py-1 mb-4 relative">
         <h2 class="font-bold mb-6" id="events">Forthcoming meetings and topics:</h2>
 
         <div class="absolute right-0" style="top: 50px; transform: translate(100%) rotate(180deg)">
@@ -51,7 +51,7 @@
     </div>
     
     <div class="overflow-x-hidden">
-      <div class="projects container-inner mx-auto text-xl border-t border-gray-500 border-b py-16 mb-16 relative">
+      <div class="projects container-inner mx-auto text-xl border-orange-500 border-b py-4 mb-1 relative">
         <h2 class="font-bold mb-6" id="events">Recent Newsletters</h2>
 
         <div class="absolute right-0" style="top: 50px; transform: translate(100%) rotate(180deg)">
@@ -68,7 +68,7 @@
     </div>
     
     <div class="overflow-x-hidden">
-      <div class="projects container-inner mx-auto text-xl border-t border-gray-500 border-b py-16 mb-16 relative">
+      <div class="projects container-inner mx-auto text-xl border-t border-orange-500 border-b py-4 mb-1 relative">
         <h2 class="font-bold mb-6" id="events">NEW Reviews!</h2>
 
         <div class="absolute right-0" style="top: 50px; transform: translate(100%) rotate(180deg)">
@@ -184,7 +184,7 @@ query Posts {
       }
     }
   }
-  posts: allSanityNewsletter (sortBy: "publishedAt", order: DESC, limit: 12) {
+  posts: allSanityNewsletter (sortBy: "publishedAt", order: DESC, limit: 4) {
     edges {
       node {
         id
