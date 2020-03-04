@@ -22,7 +22,7 @@ const postcssPlugins = [
 if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
 
 module.exports = {
-  siteName: 'Gridsome Blog Starter',
+  siteName: 'Bournemouth Big Band Swing and Jazz Club',
   siteDescription:
     'A simple, hackable & minimalistic starter for Gridsome that uses structured content from Sanity.io.',
 
