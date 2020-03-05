@@ -302,6 +302,7 @@
                       Send Message
                     </button>
                   </div>
+                  <div v-if="thanks" class="bg-orange-900 rounded-full p-1 font-semibold text-lg text-center mt-4">Thanks your message has been sent </div>
                 </div>
                 </form>
               </div>
@@ -372,6 +373,7 @@ export default {
   data() {
     return {
       formData: {},
+      thanks: false
     }
   },
   methods: {
@@ -389,7 +391,7 @@ export default {
         ...this.formData,
       }),
     })
-    .then(() => this.$router.push('/'))
+    .then(() => this.thanks = true)
     .catch(error => alert(error))
   }
 },
