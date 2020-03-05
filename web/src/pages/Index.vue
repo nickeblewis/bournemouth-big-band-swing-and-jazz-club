@@ -1,119 +1,233 @@
 <template>
   <Layout>
-    <div class="hero container-inner mx-auto flex flex-col sm:flex-row justify-between py-16">
-      <div class="text-4xl font-bold w-full sm:w-3/5 text-center sm:text-left">
-        <div class="leading-tight">Welcome to the</div>
-        <div class="text-orange-700 leading-tight">Bournemouth Big Band Swing and Jazz Club</div>
-      </div>
-      <div class="mt-8 sm:mt-0">
-        <g-image src="../../static/jazzlogo.png" alt="hero" class="mx-auto sm:mx-0" />
-      </div>
-    </div> <!-- end hero -->
-
-    <div class="container-inner mx-auto" id="about">
-      <p class="text-lg sm:text-xl mb-4">The Bournemouth Big Band Swing and Jazz Club meets on the second Wednesday of each month (7.15 - 9.45pm) in the Sharp Room of the <a href="https://kinsoncommunitycentre.org.uk/" target="_blank">Kinson Community Centre</a> Bournemouth.</p>
-      
-      <p class="text-lg sm:text-xl mb-4">Currently we have around 25 active members (Ladies and Gents) who all share a common interest in recorded Jazz music of all kinds. This can (and frequently does) range from early Dixieland to Modern Jazz via Mainstream and Big Band.</p>
-
-      <p class="text-lg sm:text-xl mb-4">The normal format of each meeting is simple - 3 members will each present 40 programme minutes of recorded Jazz music of their own choice - usually with a clever or interesting theme.</p>
-        
-      <p class="text-lg sm:text-xl mb-4">We have state of the art equipment so the sound quality is superb. After the first two presentations there is a break of around 20 minutes for tea/coffee and biscuits and a chance to socialise. Occasionally we have a guest speaker.</p>
-
-      <p class="text-lg sm:text-xl mb-4">New members are most welcome so why not come along and join us, your first evening will be totally free of charge. If you like what you hear and see then we would love you to join us as a permanent member.</p>
-        
-      <p class="text-lg sm:text-xl mb-4">There is a one-off annual cost of £4 which makes you a member of the Kinson CC and the entry fee for each meeting is just £2 which covers the cost of your refreshment as well as a fantastic evening of recorded jazz music.</p>
-
-      <p class="text-lg sm:text-xl mb-4">After each Meeting we send out a newsletter via email to all members with album and personnel details about all the music played.</p>
-
-      <p class="text-lg sm:text-xl mb-4">A really great way to meet folk who all love jazz music.</p>
-
-    
-    </div>
-
-    <div class="overflow-x-hidden">
-      <div class="projects container-inner mx-auto text-xl border-orange-500 border-b py-1 mb-4 relative">
-        <h2 class="font-bold mb-6" id="events">Forthcoming meetings and topics:</h2>
-
-        <div class="absolute right-0" style="top: 50px; transform: translate(100%) rotate(180deg)">
-          <svg width="170px" height="170px"><use xlink:href="#dots-triangle" /></svg>
+    <main>
+      <div
+        class="relative pt-16 pb-32 flex content-center items-center justify-center"
+        style="min-height: 75vh;"
+      >
+        <!-- The big Detroit grafitti backdrop of Jazz musicians -->
+        <div
+          class="absolute top-0 w-full h-full bg-center bg-cover"
+          style='background-image: url("https://images.unsplash.com/photo-1572506634451-4df8fc2f1d3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");'
+        >
+          <span
+            id="blackOverlay"
+            class="w-full h-full absolute opacity-75 bg-black"
+          ></span>
         </div>
-
-        <ul class="text-lg sm:text-xl">
-          <li class="checkmark mb-6" v-for="event in $page.events.edges" :key="event.id">
-            <div>{{ event.node.title }}</div>
-            <div class="text-lg text-gray-600">
-              <block-content :blocks="event.node._rawExcerpt" /> 
+        <!-- Lead in intro -->
+        <div class="container relative mx-auto">
+          <div class="items-center flex flex-wrap">
+            <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+              <div class="pr-12">
+                <h1 class="text-white font-semibold text-5xl">
+                  Welcome to...
+                </h1>
+                <h2 class="mt-4 text-4xl text-gray-300">
+                  Bournemouth Big Band Swing and Jazz Club
+                </h2>
+                <p class="mt-4 text-lg text-gray-300">
+                  Invite you to an evening of recorded jazz in...
+                </p>
+                <p class="mt-4 text-lg text-gray-300">
+                  The Sharpe Room, 'Pelhams', Kinson Community Centre on the 2nd Wednesday of each month at 7:15pm
+                </p>
+                <p class="mt-4 text-xl text-gray-300">
+                  Entry fee £2 (includes free refreshments)
+                </p>
+              </div>
             </div>
-          </li>
-
-        </ul>
-      </div> <!-- end projects -->
-    </div>
-    
-    <div class="overflow-x-hidden">
-      <div class="projects container-inner mx-auto text-xl border-orange-500 border-b py-4 mb-1 relative">
-        <h2 class="font-bold mb-6" id="events">Recent Newsletters</h2>
-
-        <div class="absolute right-0" style="top: 50px; transform: translate(100%) rotate(180deg)">
-          <svg width="170px" height="170px"><use xlink:href="#dots-triangle" /></svg>
-        </div>
-
-        <ul class="text-lg sm:text-xl">
-          <li class="checkmark mb-6" v-for="post in $page.posts.edges" :key="post.id">
-            <div>{{ post.node.title}}</div>
-            <div class="text-lg text-gray-600"><a :href="post.node.newsletter.asset.url">Download the {{ post.node.title}} Newsletter (PDF)</a></div>
-          </li>
-        </ul>
-      </div> <!-- end projects -->
-    </div>
-    
-    <div class="overflow-x-hidden">
-      <div class="projects container-inner mx-auto text-xl border-t border-orange-500 border-b py-4 mb-1 relative">
-        <h2 class="font-bold mb-6" id="events">NEW Reviews!</h2>
-
-        <div class="absolute right-0" style="top: 50px; transform: translate(100%) rotate(180deg)">
-          <svg width="170px" height="170px"><use xlink:href="#dots-triangle" /></svg>
-        </div>
-
-        <ul class="text-lg sm:text-xl">
-          <li class="checkmark mb-6" v-for="review in $page.reviews.edges" :key="review.id">
-            <div>{{ review.node.title}}</div>
-            <div class="text-lg text-gray-600"><a :href="review.node.newsletter.asset.url">Download {{ review.node.title}}  (PDF)</a></div>
-          </li>
-        </ul>
-      </div> <!-- end projects -->
-    </div>
-
-    <!--<div class="overflow-x-hidden border-gray-200 border-b">
-      <div class="get-to-know-me container-inner mx-auto text-xl pb-16 relative">
-        <h2 class="font-bold mb-6" id="about">Get to know me:</h2>
-
-        <div class="absolute left-0" style="top: 50px; transform: translateX(-100%)">
-          <svg width="170px" height="170px"><use xlink:href="#dots-triangle" /></svg>
-        </div>
-
-        <div class="flex flex-col sm:flex-row justify-between items-center mb-16">
-          <div><g-image src="../../static/avatar.jpg" alt="avatar" class="w-32 h-32 rounded-full mb-8 lg:mb-0" /></div>
-          <div class="flex-1 text-lg sm:text-xl ml-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum quae architecto minus molestias iusto ducimus fuga quo quia libero dignissimos, fugiat modi assumenda debitis laboriosam.</div>
-        </div>
-
-        <div class="responsive-container">
-          <iframe class="responsive-iframe w-full h-full top-0 left-0 border-0" src="https://www.youtube.com/embed/uHo6o1TNQeE" style="border:0;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>--> <!-- end get-to-know me -->
-    </div>
-
-    <div class="overflow-x-hidden">
-      <div class="contact-me bg-background-secondary pt-16">
-        <div class="container-inner mx-auto text-xl pb-4 relative">
-          <h2 class="font-bold mb-6" id="contact">Contact us:</h2>
-
-          <div class="absolute right-0 top-0" style="transform: translate(100%) rotate(180deg)">
-            <svg width="170px" height="170px"><use xlink:href="#dots-triangle" /></svg>
           </div>
+        </div>
+        <!-- Events, newsletters and reviews -->
+        <div
+          class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+          style="height: 70px; transform: translateZ(0px);"
+        >
+          <svg
+            class="absolute bottom-0 overflow-hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            version="1.1"
+            viewBox="0 0 2560 100"
+            x="0"
+            y="0"
+          >
+            <polygon
+              class="text-gray-300 fill-current"
+              points="2560 0 2560 100 0 100"
+            ></polygon>
+          </svg>
+        </div>
+      </div>
+      <section class="pb-20 bg-gray-300 -mt-24">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap">
+            <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
+              <div
+                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
+              >
+                <div class="px-4 py-5 flex-auto">
+                  <div
+                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-orange-400"
+                  >
+                    <i class="fas fa-award"></i>
+                  </div>
+                  <h6 class="text-xl font-semibold" id="events">Events</h6>
+                  <p class="mt-2 mb-4 text-gray-600">
+                    Presentations, talks, concerts and more
+                  </p>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-4/12 px-4 text-center">
+              <div
+                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
+              >
+                <div class="px-4 py-5 flex-auto">
+                  <div
+                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-orange-400"
+                  >
+                    <i class="fas fa-retweet"></i>
+                  </div>
+                  <h6 class="text-xl font-semibold" id="newsletters">Newsletters</h6>
+                  <p class="mt-2 mb-4 text-gray-600">
+                    Monthly member newsletters (downloadable format)
+                  </p>
+                  <ul class="text-lg sm:text-xl">
+                    <li v-for="post in $page.posts.edges" :key="post.id">
+                      <a class="text-gray-800" :href="post.node.newsletter.asset.url">{{ post.node.title}} Newsletter (PDF)</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="pt-6 w-full md:w-4/12 px-4 text-center">
+              <div
+                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
+              >
+                <div class="px-4 py-5 flex-auto">
+                  <div
+                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-orange-400"
+                  >
+                    <i class="fas fa-fingerprint"></i>
+                  </div>
+                  <h6 class="text-xl font-semibold">Reviews</h6>
+                  <p class="mt-2 mb-4 text-gray-600">
+                    Discover our review articles (downloadable format)
+                  </p>
+                  <ul class="text-lg sm:text-xl">
+                    <li v-for="review in $page.reviews.edges" :key="review.id">
+                      <a class="text-gray-800" :href="review.node.newsletter.asset.url">{{ review.node.title}} (PDF)</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center mt-32">
+            <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
+              <div
+                class="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-orange-100"
+              >
+                <i class="fas fa-user-friends text-xl"></i>
+              </div>
+              <h3 class="text-3xl mb-2 font-semibold leading-normal" id="about">
+                Who are we? Find out and join us!
+              </h3>
+              <p
+                class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700"
+              >
+                The Bournemouth Big Band Swing and Jazz Club meets on the second Wednesday of each month (7.15 - 9.45pm) in the Sharp Room of the Kinson Community Centre Bournemouth.
+              </p>
+              <p
+                class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
+              >
+                Currently we have around 25 active members (Ladies and Gents) who all share a common interest in recorded Jazz music of all kinds. This can (and frequently does) range from early Dixieland to Modern Jazz via Mainstream and Big Band.
+              </p>
+              <p
+                class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
+              >The normal format of each meeting is simple - 3 members will each present 40 programme minutes of recorded Jazz music of their own choice - usually with a clever or interesting theme.
 
-          <div class="text-lg sm:text-lg mb-16">
-            <form 
+
+              </p>
+              <p
+                class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
+              >We have state of the art equipment so the sound quality is superb. After the first two presentations there is a break of around 20 minutes for tea/coffee and biscuits and a chance to socialise. Occasionally we have a guest speaker.
+
+
+              </p>
+              <p
+                class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
+              >New members are most welcome so why not come along and join us, your first evening will be totally free of charge. If you like what you hear and see then we would love you to join us as a permanent member.
+
+
+              </p>
+              <p
+                class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
+              >There is a one-off annual cost of £4 which makes you a member of the Kinson CC and the entry fee for each meeting is just £2 which covers the cost of your refreshment as well as a fantastic evening of recorded jazz music.
+
+
+              </p>
+              <p
+                class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
+              >After each Meeting we send out a newsletter via email to all members with album and personnel details about all the music played.
+
+
+              </p>
+              <a
+                href="https://www.creative-tim.com/framework/tailwind-starter-kit"
+                class="font-bold text-gray-800 mt-8"
+                >A really great way to meet folk who all love jazz music.</a
+              >
+            </div>
+            <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
+              <div
+                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600"
+              >
+                <img
+                  alt="..."
+                  src="/assets/static/static/jazzlogo.png?width=439&key=84e6332"
+                  class="w-full align-middle rounded-t-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+      <section class="pb-20 relative block bg-gray-900">
+        <div
+          class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+          style="height: 80px; transform: translateZ(0px);"
+        >
+          <svg
+            class="absolute bottom-0 overflow-hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            version="1.1"
+            viewBox="0 0 2560 100"
+            x="0"
+            y="0"
+          >
+            <polygon
+              class="text-gray-900 fill-current"
+              points="2560 0 2560 100 0 100"
+            ></polygon>
+          </svg>
+        </div>
+        <div class="container mx-auto px-4 lg:pt-24 lg:pb-64"></div>
+      </section>
+      <section class="relative block py-24 lg:pt-0 bg-gray-900">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
+            <div class="w-full lg:w-6/12 px-4">
+              <div
+                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300"
+              >
+              <form 
               name="contact" 
               class="mb-12" 
               method="post" 
@@ -126,45 +240,80 @@
                   Don’t fill this out: <input name="bot-field" />
                 </label>
               </p>
-              <div class="flex flex-wrap mb-6 -mx-4">
-                  <div class="w-full md:w-1/2 mb-6 md:mb-0 px-4">
-                      <label class="block mb-2 text-copy-primary" for="name">
-                          Name
-                      </label>
-
-                      <input type="text" name="name" id="name" placeholder="Joe Bloggs" class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none focus:border-green-700 mb-2 p-4" 
+                <div class="flex-auto p-5 lg:p-10">
+                  <h4 class="text-2xl font-semibold" id="contact">Want to join us?</h4>
+                  <p class="leading-relaxed mt-1 mb-4 text-gray-600">
+                    Complete this form and we will get back to you in 24 hours.
+                  </p>
+                  <div class="relative w-full mb-3 mt-8">
+                    <label
+                      class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                      for="full-name"
+                      >Full Name</label
+                    ><input
+                      name="name" 
+                      id="name"
                       v-model="formData.name"
-                      required>
+                      required
+                      type="text"
+                      class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                      placeholder="Full Name"
+                      style="transition: all 0.15s ease 0s;"
+                    />
                   </div>
-
-                  <div class="w-full px-4 md:w-1/2">
-                      <label class="block text-copy-primary mb-2" for="email">
-                          Email Address
-                      </label>
-
-                      <input type="email" name="email" id="email" placeholder="email@example.com"  class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none focus:border-orange-700 mb-2 p-4" 
-                       v-model="formData.email"
-                      required>
+                  <div class="relative w-full mb-3">
+                    <label
+                      class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                      for="email"
+                      >Email</label
+                    ><input
+                      name="name" 
+                      id="name"
+                      v-model="formData.email"
+                      required
+                      type="email"
+                      class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                      placeholder="Email"
+                      style="transition: all 0.15s ease 0s;"
+                    />
                   </div>
+                  <div class="relative w-full mb-3">
+                    <label
+                      class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                      for="message"
+                      >Message</label
+                    ><textarea
+                    name="name" 
+                      id="name"
+                      v-model="formData.message"
+                      required
+                      rows="4"
+                      cols="80"
+                      class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                      placeholder="Type a message..."
+                    ></textarea>
+                  </div>
+                  <div class="text-center mt-6">
+                    <button
+                      class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                      type="submit" value="submit" 
+                      style="transition: all 0.15s ease 0s;"
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+                </form>
               </div>
-
-              <div class="w-full mb-12">
-                  <label class="block text-copy-primary mb-2" for="message">
-                      Message
-                  </label>
-
-                  <textarea id="message" rows="5" name="message" class="block w-full bg-background-form border border-border-color-primary shadow rounded outline-none appearance-none focus:border-orange-700 mb-2 px-4 py-4" placeholder="Enter your message here." 
-                  v-model="formData.message"
-                  required></textarea>
-              </div>
-
-              <div class="flex justify-end w-full">
-                  <button type="submit" value="submit" class="block bg-orange-700 hover:bg-orange-800 text-white text-sm font-semibold tracking-wide uppercase shadow rounded cursor-pointer px-6 py-3">Submit</button>
-              </div>
-          </form>
+            </div>
           </div>
         </div>
-      </div> <!-- end contact-me -->
+      </section>
+    </main>
+    
+    </div>
+
+    
     </div>
 
   
