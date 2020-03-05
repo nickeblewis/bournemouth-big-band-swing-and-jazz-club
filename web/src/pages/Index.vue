@@ -188,7 +188,7 @@
               >
                 <img
                   alt="..."
-                  src="/assets/static/static/jazzlogo.png?width=439&key=84e6332"
+                  src="jazzlogo.png?width=439&key=84e6332"
                   class="w-full align-middle rounded-t-lg"
                 />
               </div>
