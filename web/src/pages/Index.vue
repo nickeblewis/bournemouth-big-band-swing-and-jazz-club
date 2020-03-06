@@ -231,6 +231,7 @@
               name="contact" 
               class="mb-12" 
               method="post" 
+              action="/success/"
               v-on:submit.prevent="handleSubmit"
               data-netlify="true"
               data-netlify-honeypot="bot-field">
