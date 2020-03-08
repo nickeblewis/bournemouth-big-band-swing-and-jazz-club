@@ -268,7 +268,7 @@
                       for="email"
                       >Email</label
                     ><input
-                      name="name" 
+                      name="email" 
                       id="email"
                       v-model="formData.email"
                       required
@@ -284,7 +284,7 @@
                       for="message"
                       >Message</label
                     ><textarea
-                    name="name" 
+                      name="message" 
                       id="message"
                       v-model="formData.message"
                       required
