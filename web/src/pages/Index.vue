@@ -269,7 +269,7 @@
                       >Email</label
                     ><input
                       name="name" 
-                      id="name"
+                      id="email"
                       v-model="formData.email"
                       required
                       type="email"
@@ -285,7 +285,7 @@
                       >Message</label
                     ><textarea
                     name="name" 
-                      id="name"
+                      id="message"
                       v-model="formData.message"
                       required
                       rows="4"
@@ -392,7 +392,10 @@ export default {
         ...this.formData,
       }),
     })
-    .then(() => this.$router.push('/success'))
+    .then(() => {
+      //console.log('debuggio', this.body)
+      this.$router.push('/success')
+    })
     .catch(error => alert(error))
   }
 },
