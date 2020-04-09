@@ -77,7 +77,11 @@
                   <p class="mt-2 mb-4 text-gray-600">
                     Presentations, talks, concerts and more
                   </p>
-                 
+                 <ul class="text-lg sm:text-xl">
+                    <li v-for="event in $page.events.edges" :key="event.id">
+                      <a class="text-gray-800" :href="event.node.newsletter.asset.url">{{ event.node.title}} Event (PDF)</a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -331,6 +335,11 @@ query Posts {
         id
         title
         publishedAt (format: "MMMM D, Y")
+        newsletter {
+          asset {
+            url
+          }
+        }
         _rawExcerpt
       }
     }

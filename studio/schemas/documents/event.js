@@ -12,10 +12,26 @@ export default {
       description: 'Your event title'
     },
     {
+      name: 'slug',
+      type: 'slug',
+      title: 'Slug',
+      description:
+        'Most of the time clicking generate will create this for you and its based on the title',
+      options: {
+        source: 'title',
+        maxLength: 96
+      }
+    },
+    {
       name: 'publishedAt',
       type: 'datetime',
       title: 'Published at',
       description: 'This can be used to schedule post for publishing'
+    },
+    {
+      title: 'Newsletter PDF',
+      name: 'newsletter',
+      type: 'file',
     },
     {
       name: 'excerpt',
