@@ -32,7 +32,7 @@
               ><i
                 class="lg:text-gray-300 text-gray-500 far fa-file-alt text-lg leading-lg mr-2"
               ></i>
-              Events</a
+              Presentations</a
             >
           </li>
           <li class="flex items-center">

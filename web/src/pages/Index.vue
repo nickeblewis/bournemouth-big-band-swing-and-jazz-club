@@ -73,7 +73,7 @@
                   >
                     <i class="fas fa-award"></i>
                   </div>
-                  <h6 class="text-xl font-semibold" id="events">Events</h6>
+                  <h6 class="text-xl font-semibold" id="events">Presentations</h6>
                   <p class="mt-2 mb-4 text-gray-600">
                     Presentations, talks, concerts and more
                   </p>
@@ -200,8 +200,8 @@
           </div>
         </div>
       </section>
-      
-      
+
+
       <section class="pb-20 relative block bg-gray-900">
         <div
           class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
@@ -231,10 +231,10 @@
               <div
                 class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300"
               >
-              <form 
-              name="contact" 
-              class="mb-12" 
-              method="post" 
+              <form
+              name="contact"
+              class="mb-12"
+              method="post"
               action="/success/"
               v-on:submit.prevent="handleSubmit"
               data-netlify="true"
@@ -256,7 +256,7 @@
                       for="full-name"
                       >Full Name</label
                     ><input
-                      name="name" 
+                      name="name"
                       id="name"
                       v-model="formData.name"
                       required
@@ -272,7 +272,7 @@
                       for="email"
                       >Email</label
                     ><input
-                      name="email" 
+                      name="email"
                       id="email"
                       v-model="formData.email"
                       required
@@ -288,7 +288,7 @@
                       for="message"
                       >Message</label
                     ><textarea
-                      name="message" 
+                      name="message"
                       id="message"
                       v-model="formData.message"
                       required
@@ -301,7 +301,7 @@
                   <div class="text-center mt-6">
                     <button
                       class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                      type="submit" value="submit" 
+                      type="submit" value="submit"
                       style="transition: all 0.15s ease 0s;"
                     >
                       Send Message
@@ -316,13 +316,13 @@
         </div>
       </section>
     </main>
-    
+
     </div>
 
-    
+
     </div>
 
-  
+
 
   </Layout>
 </template>
