@@ -152,13 +152,13 @@
               </p>
               <p
                 class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
-              >The normal format of each meeting is simple - 3 members will each present 40 programme minutes of recorded Jazz music of their own choice - usually with a clever or interesting theme.
+              >The normal format of each meeting is simple - 3 members will each present 35 programme minutes of recorded Jazz music of their own choice - usually with a clever or interesting theme.
 
 
               </p>
               <p
                 class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
-              >We have state of the art equipment so the sound quality is superb. After the first two 35 minute long presentations there is a break of around 20 minutes for tea/coffee and biscuits and a chance to socialise. Occasionally we have a guest speaker.
+              >We have state of the art equipment so the sound quality is superb. After the first two presentations there is a break of around 20 minutes for tea/coffee and biscuits and a chance to socialise. Occasionally we have a guest speaker.
 
 
               </p>
