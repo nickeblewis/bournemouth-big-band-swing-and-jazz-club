@@ -30,7 +30,7 @@
                   Invite you to an evening of recorded jazz in...
                 </p>
                 <p class="mt-4 text-lg text-gray-300">
-                  Room 1, Ground Floor, Kinson Community Centre on the 2nd Wednesday of each month at 7:15pm
+                  Room 1, Ground Floor, Kinson Community Centre on the 2nd Wednesday of each month at 6:30pm
                 </p>
                 <p class="mt-4 text-xl text-gray-300">
                   Entry fee £3 (includes free refreshments)
@@ -143,7 +143,7 @@
               <p
                 class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700"
               >
-                The Bournemouth Big Band Swing and Jazz Club meets on the second Wednesday of each month (7.15 - 9.45pm) in the Sharp Room of the Kinson Community Centre Bournemouth.
+                The Bournemouth Big Band Swing and Jazz Club meets on the second Wednesday of each month (6.30 - 8.45pm) in Room 1, Ground floor of the Kinson Community Centre Bournemouth.
               </p>
               <p
                 class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
@@ -158,7 +158,7 @@
               </p>
               <p
                 class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
-              >We have state of the art equipment so the sound quality is superb. After the first two presentations there is a break of around 20 minutes for tea/coffee and biscuits and a chance to socialise. Occasionally we have a guest speaker.
+              >We have state of the art equipment so the sound quality is superb. After the first two 35 minute long presentations there is a break of around 20 minutes for tea/coffee and biscuits and a chance to socialise. Occasionally we have a guest speaker.
 
 
               </p>
@@ -170,7 +170,7 @@
               </p>
               <p
                 class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
-              >There is a one-off annual cost of £4 which makes you a member of the Kinson CC and the entry fee for each meeting is just £2 which covers the cost of your refreshment as well as a fantastic evening of recorded jazz music.
+              >There is a one-off annual cost of £4 which makes you a member of the Kinson CC and the entry fee for each meeting is just £3 which covers the cost of your refreshment as well as a fantastic evening of recorded jazz music.
 
 
               </p>
