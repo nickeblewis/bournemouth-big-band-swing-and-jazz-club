@@ -170,9 +170,7 @@
               </p>
               <p
                 class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
-              >There is a one-off annual cost of £4 which makes you a member of the Kinson CC and the entry fee for each meeting is just £3 which covers the cost of your refreshment as well as a fantastic evening of recorded jazz music.
-
-
+              >The entry cost for each meeting is £4 which includes the cost of refreshments as well as a fantastic evening of recorded jazz music.
               </p>
               <p
                 class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
