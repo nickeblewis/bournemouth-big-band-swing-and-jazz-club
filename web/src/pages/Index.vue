@@ -33,7 +33,7 @@
                   Room 1, Ground Floor, Kinson Community Centre on the 2nd Wednesday of each month at 6:30pm
                 </p>
                 <p class="mt-4 text-xl text-gray-300">
-                  Entry fee £3 (includes free refreshments)
+                  Entry fee £4 (includes free refreshments)
                 </p>
               </div>
             </div>
