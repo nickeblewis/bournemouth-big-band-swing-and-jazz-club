@@ -24,7 +24,7 @@
                   Welcome to...
                 </h1>
                 <h2 class="mt-4 text-4xl text-gray-300">
-                  Bournemouth Big Band Swing and Jazz Club
+                  Bournemouth & District Jazz Appreciation Society
                 </h2>
                 <p class="mt-4 text-lg text-gray-300">
                   Invite you to an evening of recorded jazz in...
@@ -143,7 +143,7 @@
               <p
                 class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700"
               >
-                The Bournemouth Big Band Swing and Jazz Club meets on the second Wednesday of each month (6.30 - 8.45pm) in Room 1, Ground floor of the Kinson Community Centre Bournemouth.
+                The Bournemouth & District Jazz Appreciation Society meets on the second Wednesday of each month (6.30 - 8.45pm) in Room 1, Ground floor of the Kinson Community Centre Bournemouth.
               </p>
               <p
                 class="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700"
@@ -190,7 +190,7 @@
               >
                 <img
                   alt="..."
-                  src="jazzlogo.png?width=439&key=84e6332"
+                  src="jazzposter.png?width=439&key=84e6332"
                   class="w-full align-middle rounded-t-lg"
                 />
               </div>
