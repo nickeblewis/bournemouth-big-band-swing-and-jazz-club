@@ -21,13 +21,8 @@ Vue.prototype.$urlForImage = urlForImage
   Vue.use(VueFuse)
 
   head.meta.push({
-    name: 'keywords',
-    content: 'Bournemouth,Jazz,Big Band,Music,Club'
-  })
-
-  head.meta.push({
     name: 'description',
-    content: 'Bournemouth Swing and Big Band Jazz Club'
+    content: 'Bournemouth & District Jazz Appreciation Society'
   })
 
   head.meta.push({
